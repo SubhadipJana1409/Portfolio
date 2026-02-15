@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This will be dynamically updated by JavaScript -->
+    <title>Loading Article...</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Theme initialization (runs before body renders to prevent flash) -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+      
+      // Mobile Menu toggle
+      window.hamburg = () => {
+        document.querySelector(".dropdown").style.transform = "translateY(0)";
+      };
+      window.cancel = () => {
+        document.querySelector(".dropdown").style.transform = "translateY(-110%)";
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Main Navigation Bar -->
+    <nav>
+      <div class="nav-container">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        
+        <!-- Modern Icon-based Navigation -->
+        <div class="modern-nav-wrapper">
+          <div class="modern-nav-links">
+            <a href="index.html" class="nav-item">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+            <a href="index.html#about" class="nav-item">
+              <i class="fa-solid fa-user"></i>
+              <span>About</span>
+            </a>
+            <a href="index.html#skills" class="nav-item">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+              <i class="fa-solid fa-flask"></i>
+              <span>Projects</span>
+            </a>
+            <a href="index.html#publications" class="nav-item">
+              <i class="fa-solid fa-book"></i>
+              <span>Publications</span>
+            </a>
+            <a href="index.html#experience" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+            <a href="index.html#scholarship" class="nav-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Awards</span>
+            </a>
+            <a href="index.html#volunteering" class="nav-item">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <span>Volunteering</span>
+            </a>
+            <a href="development.html" class="nav-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Development</span>
+            </a>
+            <a href="blog.html" class="nav-item">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>Blogs</span>
+            </a>
+            <a href="index.html#contact" class="nav-item nav-item-contact">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+      
+      <!-- Mobile Dropdown Menu -->
+      <div class="dropdown">
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#publications">Publications</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#scholarship">Scholarship & Awards</a>
+          <a href="index.html#volunteering">Volunteering</a>
+          <a href="development.html">Professional Development</a>
+          <a href="blog.html">Blogs</a>
+          <a href="index.html#contact">Get In Touch</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- The main container where the post will be rendered -->
+    <main class="post-page-container">
+      <article class="post-content-container">
+        <!-- This part will be filled by JavaScript -->
+        <div id="post-content">
+          <p class="loading-text">Loading article content...</p>
+        </div>
+      </article>
+    </main>
+
+    <!-- Your site footer -->
+    <footer>
+      <!-- (You can copy and paste your existing footer HTML here for consistency) -->
+      <div class="footer-container">
+        <div class="footer-bottom">
+          <p>Copyright © 2024 by Subhadip Jana | All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- JAVASCRIPT FOR THE POST PAGE                  -->
+    <!-- ============================================= -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@sanity/client/+esm"
+      type="module"
+    ></script>
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@sanity/client/+esm";
+      import { toHTML } from "https://cdn.jsdelivr.net/npm/@portabletext/to-html/+esm";
+
+      // --- 1. SANITY CLIENT CONFIGURATION ---
+      const client = createClient({
+        projectId: "18tiebeg", // Your Project ID
+        dataset: "production",
+        useCdn: true,
+        apiVersion: "2024-06-19",
+      });
+
+      // --- 2. GET THE POST SLUG FROM THE URL ---
+      const urlParams = new URLSearchParams(window.location.search);
+      const postSlug = urlParams.get("slug");
+
+      // --- 3. THE FUNCTION TO FETCH & RENDER THE SINGLE POST ---
+      async function fetchAndRenderPost() {
+        const contentContainer = document.getElementById("post-content");
+        if (!postSlug) {
+          contentContainer.innerHTML =
+            '<p class="error-text">Error: No post specified.</p>';
+          return;
+        }
+
+        // The query to get a single post by its slug
+        const query = `*[_type == "post" && slug.current == $slug][0] {
+            title,
+            "imageUrl": mainImage.asset->url,
+            "authorName": author->name,
+            publishedAt,
+            body // Fetch the entire 'body' array
+        }`;
+        const params = { slug: postSlug };
+
+        try {
+          const post = await client.fetch(query, params);
+
+          if (!post) {
+            contentContainer.innerHTML =
+              '<p class="error-text">Article not found.</p>';
+            return;
+          }
+
+          // Dynamically update the page title
+          document.title = post.title + " | Subhadip Jana";
+
+          const postDate = new Date(post.publishedAt).toLocaleDateString(
+            "en-US",
+            {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }
+          );
+
+          // Convert the Portable Text 'body' to HTML
+          const bodyHtml = toHTML(post.body);
+
+          // Render the full article
+          contentContainer.innerHTML = `
+                <header class="post-header">
+                    <h1>${post.title}</h1>
+                    <div class="post-meta-single">
+                        <span>By ${
+                          post.authorName || "Subhadip Jana"
+                        }</span> &bull;
+                        <span>Published on ${postDate}</span>
+                    </div>
+                </header>
+                <img class="post-hero-image" src="${
+                  post.imageUrl
+                }?w=1200&auto=format" alt="${post.title}">
+                <div class="post-body-content">
+                    ${bodyHtml}
+                </div>
+            `;
+        } catch (error) {
+          console.error("Failed to fetch post:", error);
+          contentContainer.innerHTML =
+            '<p class="error-text">Could not load the article. Please try again.</p>';
+        }
+      }
+
+      // --- 4. RUN THE FUNCTION ---
+      fetchAndRenderPost();
+    </script>
+    
+    <!-- Theme Toggle Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            if (newTheme === 'dark') {
+              htmlElement.setAttribute('data-theme', 'dark');
+            } else {
+              htmlElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', newTheme);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

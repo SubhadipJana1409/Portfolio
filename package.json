@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "scripts": {
+    "sanity": "cd sanity-studio && sanity start"
+  },
+  "dependencies": {
+    "@sanity/client": "^7.11.2",
+    "fast-xml-parser": "^4.5.3",
+    "rss-to-json": "^2.1.1"
+  }
+}

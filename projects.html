@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A detailed archive of research projects by Subhadip Jana."
+    />
+    <title>Research Projects - Subhadip Jana</title>
+
+    <!-- Links to your existing files -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Theme initialization (runs before body renders to prevent flash) -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Main Navigation Bar -->
+    <nav>
+      <div class="nav-container">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        
+        <!-- Modern Icon-based Navigation -->
+        <div class="modern-nav-wrapper">
+          <div class="modern-nav-links">
+            <a href="index.html" class="nav-item">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+            <a href="index.html#about" class="nav-item">
+              <i class="fa-solid fa-user"></i>
+              <span>About</span>
+            </a>
+            <a href="index.html#skills" class="nav-item">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </a>
+            <a href="projects.html" class="nav-item active">
+              <i class="fa-solid fa-flask"></i>
+              <span>Projects</span>
+            </a>
+            <a href="index.html#publications" class="nav-item">
+              <i class="fa-solid fa-book"></i>
+              <span>Publications</span>
+            </a>
+            <a href="index.html#experience" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+            <a href="index.html#scholarship" class="nav-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Awards</span>
+            </a>
+            <a href="index.html#volunteering" class="nav-item">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <span>Volunteering</span>
+            </a>
+            <a href="development.html" class="nav-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Development</span>
+            </a>
+            <a href="blog.html" class="nav-item">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>Blogs</span>
+            </a>
+            <a href="index.html#contact" class="nav-item nav-item-contact">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+      
+      <!-- Mobile Dropdown Menu -->
+      <div class="dropdown">
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#publications">Publications</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#scholarship">Scholarship & Awards</a>
+          <a href="index.html#volunteering">Volunteering</a>
+          <a href="development.html">Professional Development</a>
+          <a href="blog.html">Blogs</a>
+          <a href="index.html#contact">Get In Touch</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- This is the entire Projects Section, now on its own page -->
+    <section id="projects" class="page-section">
+      <div class="projects-container">
+        <h2 class="section-title">Key Research Projects</h2>
+
+        <div class="project-grid">
+          <!-- Project Card 1: Dissertation -->
+          <div class="project-card" data-aos="fade-up">
+            <img
+              src="assets/mahananda-sampling.jpg"
+              alt="Water sampling at the Mahananda River"
+            />
+            <div class="card-content">
+              <h4>AMR in the Mahananda River</h4>
+              <p>
+                This M.Sc. dissertation comprehensively assesses antibiotic
+                resistance (AMR), particularly carbapenem-resistant strains, in
+                the Mahananda River, a vital water source in Siliguri, India...
+              </p>
+              <div class="card-tags">
+                <span>Metagenomics</span>
+                <span>Microbiology</span>
+                <span>Antibiotic Resistance</span>
+              </div>
+              <button class="details-btn" data-modal-target="#project1-modal">
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Card 2: Acacia nilotica -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/acacia-nilotica.jpg" alt="Acacia nilotica plant" />
+            <div class="card-content">
+              <h4>Anthelmintic Activity of Acacia nilotica</h4>
+              <p>
+                An in-vitro study investigating the phytochemical profile and
+                anthelmintic efficacy of Acacia nilotica extracts against
+                Pheretima posthuma.
+              </p>
+              <div class="card-tags">
+                <span>Phytochemistry</span>
+                <span>Pharmacology</span>
+                <span>In-Vitro Assays</span>
+              </div>
+              <button class="details-btn" data-modal-target="#project2-modal">
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Card 3: Soil Isolates -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/soil-microbe.jpg" alt="Soil bacteria petri dish" />
+            <div class="card-content">
+              <h4>Screening Soil Isolates for Antibiotic Production</h4>
+              <p>
+                A bioprospecting project to isolate and screen soil bacteria for
+                antimicrobial compounds effective against multidrug-resistant
+                pathogens.
+              </p>
+              <div class="card-tags">
+                <span>Bioprospecting</span>
+                <span>Antimicrobial Screening</span>
+                <span>Drug Discovery</span>
+              </div>
+              <button class="details-btn" data-modal-target="#project3-modal">
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Card 4: Hospital Wastewater -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="assets/wastewater-ecoli.jpg"
+              alt="E. coli on an EMB agar plate"
+            />
+            <div class="card-content">
+              <h4>Plasmid-Mediated AMR in Hospital Wastewater</h4>
+              <p>
+                An investigation into plasmid-mediated antibiotic resistance in
+                E. coli isolated from hospital effluents, linking clinical waste
+                to environmental AMR.
+              </p>
+              <div class="card-tags">
+                <span>Microbial Genetics</span>
+                <span>Plasmid Analysis</span>
+                <span>Wastewater Surveillance</span>
+              </div>
+              <button class="details-btn" data-modal-target="#project4-modal">
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Card 5: Medicinal Plants -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <img
+              src="assets/medicinal-plants.jpg"
+              alt="Medicinal plants like Neem and Tulsi"
+            />
+            <div class="card-content">
+              <h4>Antimicrobial Properties of Medicinal Plant Extracts</h4>
+              <p>
+                A study exploring the antimicrobial activity of plant extracts
+                against ESBL-producing strains of E. coli and Klebsiella
+                pneumoniae.
+              </p>
+              <div class="card-tags">
+                <span>Natural Product Research</span>
+                <span>Phytochemistry</span>
+                <span>Microbiology</span>
+              </div>
+              <button class="details-btn" data-modal-target="#project5-modal">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- MODAL POP-UPS (HIDDEN BY DEFAULT) -->
+    <!-- Place this section right before your main <script> tag section -->
+    <!-- ====================================================== -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <!-- Modal 1: MSc Dissertation -->
+    <div class="modal" id="project1-modal">
+      <div class="modal-header">
+        <h3>
+          Comprehensive Assessment of Antibiotic Resistance in the Mahananda
+          River
+        </h3>
+        <button class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="assets/images/project1.png"
+          alt="Water sampling location at River Mahananda"
+          class="modal-img"
+        />
+
+        <h4>Short Summary</h4>
+        <p>
+          This M.Sc. dissertation comprehensively assesses antibiotic resistance
+          (AMR), particularly carbapenem-resistant strains, in the Mahananda
+          River. Utilizing both culture-based and eDNA metagenomic methods, the
+          study identifies the prevalence of resistant bacteria and diverse
+          antibiotic resistance genes (ARGs), highlighting significant public
+          health risks from environmental contamination.
+        </p>
+
+        <h4>Project Objectives</h4>
+        <ol>
+          <li>
+            To create a database on the abundance of culturable
+            antibiotic-resistant bacteria with special emphasis on
+            carbapenem-resistant strains.
+          </li>
+          <li>
+            To isolate and screen carbapenem-resistant and metallo-β-lactamase
+            (MBL) producing bacterial isolates.
+          </li>
+          <li>
+            To explore the river's antibiotic resistome through whole-metagenome
+            analysis of collected water samples.
+          </li>
+        </ol>
+
+        <h4>Methods</h4>
+        <p>
+          The study utilized both culture-dependent and culture-independent
+          methodologies.
+        </p>
+
+        <p><strong>Culture-Dependent Methods:</strong></p>
+        <ul>
+          <li>
+            <strong>Sample Collection:</strong> Water samples were collected
+            from a selected middle stream section of the Mahananda River over a
+            three-month period at distinct morning and evening times to assess
+            diurnal variation. Samples were transported in sterilized
+            screw-capped bottles in an icebox to preserve microbial composition.
+          </li>
+          <li>
+            <strong>Isolation of Carbapenem-Resistant Bacteria:</strong> Samples
+            underwent 10-fold serial dilutions and were plated on Luria Bertani
+            (LB) agar supplemented with Imipenem-Cilastatin (IC).
+            Morphologically distinct colonies were selected for further
+            analysis.
+          </li>
+          <li>
+            <strong>Isolation of Benzylpenicillin-Resistant Bacteria:</strong>
+            Samples were inoculated into an enrichment medium containing
+            benzylpenicillin potassium salt as the sole carbon source to isolate
+            distinct colonies.
+          </li>
+          <li>
+            <strong>Screening for Metallo-β-Lactamase (MBL) Producers:</strong>
+            MBL production was screened using the EDTA assay method. Out of 57
+            initial isolates, 12 were confirmed as MBL producers.
+          </li>
+          <li>
+            <strong>Phenotypic Characterization:</strong> Selected isolates
+            underwent biochemical tests (KOH string test, catalase, oxidase,
+            indole, citrate utilization) following Bergey's Manual of Systematic
+            Bacteriology.
+          </li>
+          <li>
+            <strong>Antibiotic Susceptibility Profile:</strong> Susceptibility
+            of MBL-producing strains to a panel of 25 antibiotics was determined
+            using the disk diffusion method, following EUCAST guidelines.
+          </li>
+          <li>
+            <strong
+              >Multiple Antibiotic Resistance (MAR) Index Determination:</strong
+            >
+            The MAR index was calculated for each isolate, with values >20%
+            indicating high-risk contamination sources.
+          </li>
+        </ul>
+
+        <p><strong>Culture-Independent Methods (Metagenomics):</strong></p>
+        <ul>
+          <li>
+            <strong>Metagenome Extraction:</strong> DNA was extracted from mixed
+            water samples using the QIAGEN DNeasy Power Water Kit.
+          </li>
+          <li>
+            <strong>Agarose Gel Electrophoresis:</strong> Used to assess the
+            quality of extracted metagenomic DNA.
+          </li>
+          <li>
+            <strong>Metagenome Sequencing:</strong> DNA that passed Quality
+            Control (QC) was fragmented and sequenced using next-generation
+            sequencing platforms (e.g., Illumina).
+          </li>
+          <li>
+            <strong>Metagenome Analysis:</strong>
+            <ul>
+              <li>
+                <strong>Taxonomy Profiling:</strong> Performed using
+                <code>MetaPhlAn4</code> to profile microbial community
+                composition at the species level.
+              </li>
+              <li>
+                <strong>Detection of ARGs and MGEs:</strong> Data was analyzed
+                using the DOE Systems Biology Knowledgebase
+                (<code>KBase</code>), involving trimming reads with
+                <code>Trimmomatic</code>, assembling with
+                <code>metaSPAdes</code>, and annotating with
+                <code>RASTtk</code>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Key Findings & Outcome</h4>
+        <ul>
+          <li>
+            <strong>Prevalence of Carbapenem-Resistant Bacteria:</strong> A
+            significant presence was detected, with the APMG02(A) sample showing
+            the highest incidence at <strong>1.63%</strong>.
+          </li>
+          <li>
+            <strong>MBL-Producing Strains:</strong> Out of 57 selected isolates,
+            <strong>12 (21.05%)</strong> were confirmed as MBL-producing
+            strains, predominantly Gram-negative bacteria, indicating a high
+            prevalence of this resistance mechanism.
+          </li>
+          <li>
+            <strong>Biochemical Characterization:</strong> Most MBL producers
+            were Gram-negative (9/12), oxidase-positive (10/12), and
+            catalase-positive (8/12), suggesting adaptation to aerobic river
+            conditions and reflecting a complex microbial community.
+          </li>
+          <li>
+            <strong>High Antibiotic Resistance:</strong> All 12 strains
+            displayed uniform resistance to critical β-lactam antibiotics and
+            imipenem. Some strains were alarmingly resistant to last-resort
+            antibiotics like vancomycin and linezolid.
+          </li>
+          <li>
+            <strong>Multiple Antibiotic Resistance (MAR) Index:</strong> All
+            tested MBL-positive isolates showed MAR index values >20%,
+            indicating high-risk contamination sources. Five strains exhibited
+            very high multiple drug resistance (MAR Index ≥ 60%), with one
+            reaching <strong>84%</strong>.
+          </li>
+          <li>
+            <strong>Categorization of Resistant Strains:</strong> Most isolates
+            (10/12) were classified as extensively drug-resistant
+            (<strong>XDR</strong>), with only two falling into the multi-drug
+            resistant (<strong>MDR</strong>) group. No pan-drug resistant (PDR)
+            strains were identified.
+          </li>
+          <li>
+            <strong>ARG & MGE Profile:</strong> Metagenomic analysis revealed a
+            diverse range of ARGs (for aminoglycosides, macrolides, β-lactams,
+            quinolones) and a high prevalence of mobile genetic elements like
+            <strong>Integron integrase IntI1</strong> and conjugative transposon
+            proteins, underscoring their critical role in horizontal gene
+            transfer.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal 2: Acacia nilotica -->
+    <div class="modal" id="project2-modal">
+      <div class="modal-header">
+        <h3>
+          In-Vitro Phytochemical Analysis and Anthelmintic Activity of Acacia
+          nilotica
+        </h3>
+        <button class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <h4>Introduction</h4>
+        <p>
+          Helminthiasis, caused by various types of worms, is a widespread and
+          hazardous human infection that can lead to internal organ damage,
+          primarily spread through contaminated food. While synthetic drugs are
+          available, they often come with various side effects. There is a
+          growing need to develop efficient anti-helminthic agents from
+          traditional medicine, particularly from plants, which are a valuable
+          resource for tropical developing countries. Acacia nilotica has been
+          historically recognized for its numerous therapeutic activities,
+          including its efficacy against various pathogens and parasitic
+          infections, with its root bark specifically used to cure such
+          ailments. Based on its traditional use by villagers and tribal
+          populations for common diseases, Acacia nilotica was selected for this
+          experimental study. The project's comprehensive approach aims to
+          contribute to the global effort to find new, effective drugs that can
+          overcome the limitations of current synthetic treatments, particularly
+          those without adverse side effects
+        </p>
+
+        <h4>Objective</h4>
+        <p>
+          To investigate the phytochemical and anthelmintic potential of
+          different extracts of Acacia nilotica leaves and flowers when applied
+          to the Indian adult earthworm (Pheretima posthuma), which serves as an
+          anatomical model for human roundworm parasites.
+        </p>
+
+        <h4>Methods</h4>
+        <p>The study employed the following methodologies:</p>
+        <ul>
+          <li>
+            <strong>Material Collection & Preparation:</strong>
+            Acacia nilotica samples (leaves and flowers) were collected from
+            Purba Medinipur, West Bengal. They were shade-dried, crushed, and
+            then subjected to Soxhlet extraction using methanol and water as
+            solvents. The resulting extracts were concentrated using a rotary
+            evaporator.
+          </li>
+          <li>
+            <strong>Experimental Model:</strong>
+            Indian adult earthworms (<em>Pheretima posthuma</em>) were chosen
+            for the assay due to their physiological similarities to human
+            roundworm parasites.
+          </li>
+          <li>
+            <strong>Anthelmintic Activity Assay:</strong>
+            The prepared methanolic and aqueous extracts (at 50 mg/l and 100
+            mg/l) were tested against the earthworms. Albendazole (100 mg/ml)
+            was used as the standard drug for comparison. The time taken for
+            paralysis and death of the worms was carefully recorded for each
+            group.
+          </li>
+          <li>
+            <strong>Phytochemical Analysis:</strong>
+            A qualitative screening of the extracts was conducted to identify
+            key plant compounds using standard methods:
+            <ul>
+              <li>
+                <strong>Alkaloid test:</strong> Wagner's reagent test, indicated
+                by a red-brown precipitate.
+              </li>
+              <li>
+                <strong>Flavonoid test:</strong> Dilute ammonium and H₂SO₄ test,
+                indicated by a yellow color.
+              </li>
+              <li>
+                <strong>Glycosides test:</strong> Ferric chloride and H₂SO₄
+                test, indicated by a brown ring.
+              </li>
+              <li>
+                <strong>Phenol test:</strong> Ferric chloride test, indicated by
+                a blue or green color.
+              </li>
+              <li>
+                <strong>Terpenoid test:</strong> Chloroform and H₂SO₄ test,
+                indicated by reddish-brown coloration.
+              </li>
+              <li>
+                <strong>Anthraquinone test:</strong> Dilute NaOH test, indicated
+                by blue, green, or red coloration.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Key Findings & Outcome</h4>
+        <ul>
+          <li>
+            <strong>Effective Anthelmintic Activity:</strong> Both the methanol
+            and aqueous extracts of <em>Acacia nilotica</em> demonstrated
+            significant anthelmintic activity against
+            <em>Pheretima posthuma</em>.
+          </li>
+          <li>
+            <strong>Comparative Efficacy:</strong> The study revealed nuanced
+            differences in extract performance compared to the standard drug,
+            Albendazole.
+            <ul>
+              <li>
+                The <strong>aqueous extract (100 mg/ml)</strong> resulted in a
+                faster death time (39m 50s) than Albendazole (42m 28s).
+              </li>
+              <li>
+                The <strong>methanolic extract (100 mg/ml)</strong> exhibited
+                the fastest paralysis time overall (20m 15s).
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Phytochemical Constituents Identified:</strong> The extracts
+            were rich in bioactive compounds.
+            <ul>
+              <li>
+                <strong>Methanolic Extract:</strong> Tested positive for
+                Alkaloids, Flavonoids, Phenol, Terpenoids, and Anthraquinones.
+              </li>
+              <li>
+                <strong>Aqueous Extract:</strong> Tested positive for
+                Glycosides, Terpenoids, and Anthraquinones.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Conclusion</h4>
+        <p>
+          The study confirmed the traditional use of <em>Acacia nilotica</em> in
+          treating helminthiasis, demonstrating its potential as a source of new
+          anthelmintic agents. The methanolic extract showed superior activity
+          compared to the aqueous extract, particularly at the 100 mg/ml
+          concentration. The presence of various phytoconstituents suggests that
+          these compounds may contribute to the observed anthelmintic effects.
+          The study concluded that <em>Acacia nilotica</em> possesses promising
+          phytoconstituents and significant anthelmintic activity against the
+          Indian adult earthworm. The 100 mg/ml concentration of both methanolic
+          and aqueous extracts yielded very satisfactory results for both
+          paralysis and death times. This plant is considered to open a new
+          avenue for drug researchers, offering potential for developing
+          important drugs with fewer side effects.
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal 3: Soil Isolates -->
+    <div class="modal" id="project3-modal">
+      <div class="modal-header">
+        <h3>
+          Screening Soil Isolates for Antibiotic Production Against MDR Strains
+        </h3>
+        <button class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <h4>1. Abstract</h4>
+        <p>
+          The rise of multidrug-resistant (MDR) bacterial pathogens has
+          triggered a renewed global interest in natural product discovery,
+          especially antibiotics from soil microorganisms. This project aimed to
+          isolate soil-dwelling bacteria capable of producing antimicrobial
+          compounds effective against MDR pathogens such as MRSA, ESBL-producing
+          E. coli, and carbapenem-resistant Klebsiella pneumoniae. Using
+          classical microbiological techniques, promising antibiotic-producing
+          strains were screened and preliminarily characterized. Results
+          demonstrated that soil remains a rich and largely untapped source of
+          novel bioactive metabolites. The project also served as a practical
+          and educational model for undergraduate research on antimicrobial
+          resistance.
+        </p>
+
+        <h4>2. Introduction</h4>
+        <p>
+          Antibiotics revolutionized modern medicine, but their widespread
+          misuse has led to the emergence of bacteria that are resistant to
+          multiple drugs. MDR pathogens now threaten the effectiveness of
+          standard treatments for infections. At the same time, the discovery
+          rate of new antibiotics has declined sharply. Historically, many
+          antibiotics have originated from soil bacteria, particularly
+          actinomycetes like Streptomyces. This project was designed to revisit
+          soil bioprospecting with a focus on discovering antibiotic-producing
+          isolates capable of inhibiting MDR bacteria.
+        </p>
+
+        <h4>3. Objectives</h4>
+        <ul>
+          <li>To isolate soil bacteria from different natural environments.</li>
+          <li>
+            To screen isolates for antibacterial activity against known MDR
+            pathogens.
+          </li>
+          <li>
+            To characterize active isolates using basic morphological and
+            biochemical techniques.
+          </li>
+          <li>
+            To evaluate soil as a potential source for discovering new
+            antimicrobial agents.
+          </li>
+        </ul>
+
+        <h4>4. Materials and Methods</h4>
+        <p>
+          <strong>4.1 Soil Sample Collection:</strong> Soil was collected from
+          various habitats including agricultural fields, forest floors, and
+          organic compost piles. Samples were air-dried and stored at 4°C.
+        </p>
+        <p>
+          <strong>4.2 Microbial Isolation:</strong> Serial dilution followed by
+          spread plating was used on Nutrient Agar (NA), Starch Casein Agar
+          (SCA), and Actinomycete Isolation Agar (AIA). Plates were incubated at
+          28–30°C for 5–7 days.
+        </p>
+        <p>
+          <strong>4.3 Morphological and Biochemical Characterization:</strong>
+          Characterization included colony features, Gram staining, and
+          catalase/oxidase tests. Growth patterns were noted to distinguish
+          Streptomyces and Bacillus species.
+        </p>
+        <p>
+          <strong>4.4 Antibacterial Screening:</strong> Primary screening was
+          done via the Cross-Streak Method. Secondary screening used the Agar
+          Well Diffusion Assay, where zones of inhibition from cell-free
+          supernatants were measured in mm.
+        </p>
+        <p>
+          <strong>4.5 Test Pathogens:</strong> Standard lab or clinical isolates
+          included Escherichia coli (ESBL-producing), Staphylococcus aureus
+          (MRSA), Klebsiella pneumoniae (carbapenem-resistant), and Pseudomonas
+          aeruginosa.
+        </p>
+
+        <h4>5. Results</h4>
+        <ul>
+          <li>Total isolates obtained: 50</li>
+          <li>Preliminary active isolates: 12</li>
+          <li>Strong antimicrobial activity (zone ≥ 12 mm): 6 isolates</li>
+          <li>
+            Most active isolates were morphologically consistent with
+            actinomycetes or Bacillus spp.
+          </li>
+          <li>
+            A forest soil isolate showed broad-spectrum activity against all
+            tested MDR strains.
+          </li>
+          <li>
+            Pigment-producing isolates often correlated with positive inhibition
+            results, suggesting secondary metabolite involvement.
+          </li>
+        </ul>
+
+        <h4>6. Discussion</h4>
+        <p>
+          Soil ecosystems, particularly in diverse and organic-rich
+          environments, harbor a wealth of bioactive microbes. The ability of
+          certain isolates to inhibit MDR pathogens suggests that they produce
+          novel or underexplored antimicrobial compounds. The project also
+          reinforced the usefulness of simple, low-cost screening techniques for
+          identifying bioactive strains, making them ideal for undergraduate
+          laboratories. Future work could involve molecular characterization
+          (16S rRNA sequencing) and metabolite purification to identify the
+          novel antibiotics produced.
+        </p>
+
+        <h4>7. Conclusion</h4>
+        <p>
+          This mini-project successfully demonstrated that soil microbes,
+          particularly those from undisturbed environments, exhibit significant
+          antimicrobial activity against MDR bacteria. Several isolates showed
+          promising activity that could warrant further purification and
+          chemical characterization, contributing to the broader effort of
+          rediscovering natural antibiotics.
+        </p>
+
+        <h4>8. References</h4>
+        <ol>
+          <li>
+            Berdy, J. (2012). Thoughts and facts about antibiotics... The
+            Journal of Antibiotics, 65(8), 385–395.
+          </li>
+          <li>
+            Wright, G. D. (2014). Something old, something new... Canadian
+            Journal of Microbiology, 60(3), 147–154.
+          </li>
+          <li>
+            World Health Organization (2020). Global antimicrobial resistance...
+            (GLASS) report.
+          </li>
+          <li>
+            Demain, A. L. (1999). Pharmaceutically active secondary
+            metabolites... Applied Microbiology and Biotechnology, 52(4),
+            455–463.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Modal 4: Hospital Wastewater -->
+    <div class="modal" id="project4-modal">
+      <div class="modal-header">
+        <h3>
+          Plasmid-Mediated AMR in Environmental E. coli from Hospital Wastewater
+        </h3>
+        <button class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <h4>1. Abstract</h4>
+        <p>
+          Antimicrobial resistance (AMR) continues to rise globally, with
+          hospital wastewater serving as a critical environmental reservoir for
+          resistant bacteria and mobile genetic elements such as plasmids. This
+          project investigated the presence of plasmid-mediated antibiotic
+          resistance in environmental Escherichia coli isolates from hospital
+          effluents. A combination of microbiological and molecular techniques
+          was used to isolate, characterize, and test the resistance profiles of
+          E. coli, with particular focus on plasmid carriage. Results confirmed
+          the prevalence of multidrug-resistant strains and the role of plasmids
+          in facilitating resistance gene dissemination, highlighting the need
+          for stricter effluent management from healthcare facilities.
+        </p>
+
+        <h4>2. Introduction</h4>
+        <p>
+          Plasmids—extrachromosomal DNA molecules capable of horizontal gene
+          transfer—play a key role in the spread of resistance genes among
+          bacterial populations. Hospital wastewater contains not only
+          pathogenic bacteria but also residual antibiotics, providing ideal
+          conditions for resistance selection. In this context, E. coli serves
+          as a model organism for tracking AMR in the environment due to its
+          prevalence, ease of isolation, and role as a fecal indicator.
+        </p>
+
+        <h4>3. Objectives</h4>
+        <ul>
+          <li>
+            To isolate and identify E. coli strains from hospital wastewater.
+          </li>
+          <li>To determine their antibiotic susceptibility profiles.</li>
+          <li>
+            To extract and characterize plasmid DNA from resistant isolates.
+          </li>
+          <li>
+            To establish whether the observed resistance is plasmid-mediated.
+          </li>
+        </ul>
+
+        <h4>4. Materials and Methods</h4>
+        <p>
+          <strong>4.1 Sample Collection & Isolation:</strong> Hospital
+          wastewater was collected and processed within 2 hours. Samples were
+          plated on Eosin Methylene Blue (EMB) agar, and colonies with a
+          characteristic metallic green sheen were selected. Confirmation was
+          done using standard biochemical tests (IMViC, urease, catalase).
+        </p>
+        <p>
+          <strong>4.2 Susceptibility Testing:</strong> The Kirby-Bauer disk
+          diffusion method was used to test isolates against Ampicillin,
+          Tetracycline, Cefotaxime, Ciprofloxacin, and Gentamicin, with results
+          interpreted per CLSI guidelines.
+        </p>
+        <p>
+          <strong>4.3 Plasmid Analysis:</strong> Plasmid DNA was extracted from
+          resistant isolates using an alkaline lysis method. Electrophoresis was
+          performed on 1% agarose gel stained with ethidium bromide to visualize
+          and estimate plasmid sizes.
+        </p>
+
+        <h4>5. Results</h4>
+        <ul>
+          <li>
+            A total of <strong>24 E. coli isolates</strong> were confirmed from
+            the collected samples.
+          </li>
+          <li>
+            <strong>75% (18 isolates)</strong> exhibited resistance to at least
+            one tested antibiotic, with 10 isolates showing multidrug
+            resistance.
+          </li>
+          <li>
+            Plasmid DNA (ranging from 2–10 kb) was detected in 14 of the
+            resistant isolates.
+          </li>
+          <li>
+            Post-curing experiments confirmed that resistance to ampicillin and
+            tetracycline was plasmid-mediated in selected isolates.
+          </li>
+        </ul>
+
+        <h4>6. Discussion</h4>
+        <p>
+          The high prevalence of resistant E. coli in hospital wastewater
+          confirms significant environmental exposure to antibiotic pressure.
+          The identification of plasmid-borne resistance supports the critical
+          role of horizontal gene transfer in MDR proliferation. These results
+          have important implications for environmental AMR surveillance and
+          suggest that wastewater from healthcare settings requires more
+          stringent control measures before discharge.
+        </p>
+
+        <h4>7. Conclusion</h4>
+        <p>
+          This study reveals a high prevalence of plasmid-mediated antibiotic
+          resistance in E. coli from hospital wastewater. The findings emphasize
+          the importance of monitoring environmental reservoirs of AMR. On an
+          educational level, this project provided a comprehensive research
+          experience, combining classical microbiology with modern molecular
+          diagnostics in a real-world context.
+        </p>
+
+        <h4>8. References</h4>
+        <ol>
+          <li>
+            World Health Organization. (2020). Global Action Plan on
+            Antimicrobial Resistance.
+          </li>
+          <li>
+            Martinez, J.L. (2009). Environmental pollution by antibiotics...
+            Environmental Pollution, 157(11), 2893–2902.
+          </li>
+          <li>
+            Sambrook, J., & Russell, D.W. (2001). Molecular Cloning: A
+            Laboratory Manual.
+          </li>
+          <li>
+            CLSI (2023). Performance Standards for Antimicrobial Susceptibility
+            Testing.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Modal 5: Medicinal Plants -->
+    <div class="modal" id="project5-modal">
+      <div class="modal-header">
+        <h3>
+          Antimicrobial Properties of Medicinal Plant Extracts Against
+          ESBL-Producing Bacteria
+        </h3>
+        <button class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <h4>1. Abstract</h4>
+        <p>
+          The emergence of Extended-Spectrum Beta-Lactamase (ESBL)-producing
+          bacteria has rendered many common antibiotics ineffective. This
+          project explored the antimicrobial activity of aqueous and ethanol
+          extracts from selected medicinal plants against ESBL-producing strains
+          of Escherichia coli and Klebsiella pneumoniae. Using standard
+          microbiological techniques, we identified plant extracts with
+          promising inhibitory effects, demonstrating that traditional medicinal
+          plants may provide alternative strategies for combatting resistant
+          bacterial infections.
+        </p>
+
+        <h4>2. Introduction</h4>
+        <p>
+          With antibiotic resistance accelerating globally, ESBL-producing
+          bacteria represent a major clinical concern as they can hydrolyze a
+          broad range of β-lactam antibiotics. As a result, attention is
+          shifting back to nature for therapeutic alternatives. Medicinal
+          plants, rich in phytochemicals like flavonoids and alkaloids, possess
+          antimicrobial properties. This project aimed to screen selected plant
+          extracts for activity against ESBL strains, highlighting their
+          relevance in the global search for novel antimicrobial agents.
+        </p>
+
+        <h4>3. Objectives</h4>
+        <ul>
+          <li>
+            To prepare aqueous and ethanol extracts of selected medicinal plants
+            (Neem, Tulsi, Turmeric).
+          </li>
+          <li>
+            To test the antimicrobial activity of these extracts against
+            ESBL-producing E. coli and Klebsiella pneumoniae.
+          </li>
+          <li>To compare plant extract efficacy with standard antibiotics.</li>
+          <li>
+            To evaluate the potential of plant-derived compounds in overcoming
+            ESBL-mediated resistance.
+          </li>
+        </ul>
+
+        <h4>4. Materials and Methods</h4>
+        <p>
+          <strong>4.1 Plant Material & Extraction:</strong> Leaves and rhizomes
+          of Azadirachta indica, Ocimum sanctum, and Curcuma longa were
+          collected, dried, and powdered. Aqueous extracts were prepared by
+          boiling in distilled water, while ethanolic extracts were prepared by
+          soaking in 70% ethanol. Extracts were then filtered and concentrated.
+        </p>
+        <p>
+          <strong>4.2 Bacterial Isolates:</strong> Confirmed ESBL-producing
+          strains of E. coli and Klebsiella pneumoniae were obtained from a
+          microbiology lab.
+        </p>
+        <p>
+          <strong>4.3 Antimicrobial Testing:</strong> The agar well diffusion
+          method was used on Mueller-Hinton agar. 100 µL of each extract was
+          added to 6 mm wells. Cefotaxime was used as a positive control and the
+          solvents as negative controls. Plates were incubated and zones of
+          inhibition were measured.
+        </p>
+
+        <h4>5. Results</h4>
+        <ul>
+          <li>
+            Ethanolic extracts consistently demonstrated higher efficacy than
+            aqueous extracts for all three plants.
+          </li>
+          <li>
+            <strong>Azadirachta indica (Neem)</strong> ethanolic extract showed
+            the highest activity, with inhibition zones up to
+            <strong>17 mm</strong> against E. coli and
+            <strong>15 mm</strong> against Klebsiella.
+          </li>
+          <li>
+            <strong>Ocimum sanctum (Tulsi)</strong> also exhibited notable
+            inhibition (approx. 13–14 mm), especially in its ethanolic form.
+          </li>
+          <li>
+            <strong>Curcuma longa (Turmeric)</strong> showed only mild activity
+            in its crude extract form.
+          </li>
+          <li>
+            The results confirmed the presence of bioactive phytochemicals
+            capable of inhibiting ESBL-producing bacterial strains.
+          </li>
+        </ul>
+
+        <h4>6. Discussion</h4>
+        <p>
+          This study supports the traditional use of medicinal plants as
+          antimicrobial agents. The superior activity of ethanolic extracts is
+          likely due to the better solubility of active phytochemicals. The
+          substantial inhibition of ESBL-producing bacteria indicates that some
+          plant-derived compounds may bypass beta-lactamase-mediated resistance,
+          encouraging further studies on purification and mechanism of action.
+        </p>
+
+        <h4>7. Conclusion</h4>
+        <p>
+          The antimicrobial activity observed in neem and tulsi extracts offers
+          promising leads for natural alternatives against drug-resistant
+          pathogens. While not immediate replacements for antibiotics, they can
+          complement existing therapies or serve as sources for novel drug
+          development. This project emphasized the role of ethnomedicine in
+          modern microbiological research.
+        </p>
+
+        <h4>8. References</h4>
+        <ol>
+          <li>
+            Cowan, M. M. (1999). Plant products as antimicrobial agents.
+            Clinical Microbiology Reviews, 12(4), 564–582.
+          </li>
+          <li>
+            Cheesbrough, M. (2006). District Laboratory Practice in Tropical
+            Countries.
+          </li>
+          <li>
+            WHO (2020). Traditional and complementary medicine: report on global
+            strategy.
+          </li>
+          <li>
+            CLSI (2023). Performance Standards for Antimicrobial Susceptibility
+            Testing.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Scripts for animations and modal pop-ups -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800 });
+
+      // Mobile Menu toggle
+      window.hamburg = () => {
+        document.querySelector(".dropdown").style.transform = "translateY(0)";
+      };
+      window.cancel = () => {
+        document.querySelector(".dropdown").style.transform =
+          "translateY(-110%)";
+      };
+
+      // Theme Toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            if (newTheme === 'dark') {
+              htmlElement.setAttribute('data-theme', 'dark');
+            } else {
+              htmlElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', newTheme);
+          });
+        }
+      });
+
+      // Standalone script for modals and 3D tilt on this page
+      document.addEventListener("DOMContentLoaded", () => {
+        // Modal Logic
+        const modalButtons = document.querySelectorAll("[data-modal-target]");
+        const overlay = document.getElementById("modal-overlay");
+        const openModal = (modal) => {
+          if (modal) {
+            modal.classList.add("active");
+            overlay.classList.add("active");
+          }
+        };
+        const closeModal = () => {
+          const activeModal = document.querySelector(".modal.active");
+          if (activeModal) {
+            activeModal.classList.remove("active");
+            overlay.classList.remove("active");
+          }
+        };
+        modalButtons.forEach((button) =>
+          button.addEventListener("click", () =>
+            openModal(document.querySelector(button.dataset.modalTarget))
+          )
+        );
+        if (overlay) overlay.addEventListener("click", closeModal);
+        document
+          .querySelectorAll(".close-btn")
+          .forEach((btn) => btn.addEventListener("click", closeModal));
+      });
+    </script>
+  </body>
+</html>

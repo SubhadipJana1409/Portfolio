@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional development, training, and academic engagements of Subhadip Jana."
+    />
+    <title>Professional Development - Subhadip Jana</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Theme initialization (runs before body renders to prevent flash) -->
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
+    <style>
+      /* This new rule hides the content sections by default */
+      .content-section {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="post-nav">
+      <a href="index.html#professional development" class="nav-back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Main Portfolio
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+
+    <main class="page-section">
+      <div class="development-container">
+        <!-- This h2 will be dynamically updated by JavaScript -->
+        <h2 id="page-title" class="section-title">Loading...</h2>
+
+        <!-- Content Section 1: Certifications -->
+        <div id="certifications" class="content-section">
+          <!-- Content will be loaded dynamically -->
+        </div>
+
+        <!-- Content Section 2: Presentations -->
+        <div id="presentations" class="content-section">
+          <!-- Content will be loaded dynamically -->
+        </div>
+
+        <!-- Content Section 3: Webinars -->
+        <div id="webinars" class="content-section">
+          <!-- Content will be loaded dynamically -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Dynamic Professional Development Content -->
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@sanity/client/+esm";
+
+      // Fetches certifications
+      async function fetchCertifications(client) {
+        try {
+          const query = `*[_type == "certification"] | order(order desc){ _id, title, organization, keySkills, certificateLink, completionDate, order }`;
+          return await client.fetch(query);
+        } catch (error) {
+          console.error("Certifications fetch failed:", error);
+          return [];
+        }
+      }
+
+      // Fetches presentations
+      async function fetchPresentations(client) {
+        try {
+          const query = `*[_type == "presentation"] | order(order desc){ _id, title, type, event, description, detailsLink, date, order }`;
+          return await client.fetch(query);
+        } catch (error) {
+          console.error("Presentations fetch failed:", error);
+          return [];
+        }
+      }
+
+      // Fetches webinars
+      async function fetchWebinars(client) {
+        try {
+          const query = `*[_type == "webinar"] | order(order desc){ _id, title, host, topic, link, date, order }`;
+          return await client.fetch(query);
+        } catch (error) {
+          console.error("Webinars fetch failed:", error);
+          return [];
+        }
+      }
+
+      function renderCertifications(certifications) {
+        const container = document.getElementById("certifications");
+        if (!container) return;
+
+        if (certifications.length === 0) {
+          container.innerHTML = "<p>No certifications added yet.</p>";
+          return;
+        }
+
+        let html = '<ul class="e-learning-list">';
+        certifications.forEach((cert) => {
+          const certificateLink = cert.certificateLink
+            ? `<a href="${cert.certificateLink}" target="_blank" class="certificate-link">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`
+            : "Certificate not available";
+          html += `
+            <li class="e-learning-item">
+              <div class="e-learning-header">
+                <h4>${cert.title}</h4>
+                ${certificateLink}
+              </div>
+              <p class="e-learning-meta">${cert.organization}</p>
+              <p class="e-learning-skills"><strong>Key Skills:</strong> ${cert.keySkills}</p>
+            </li>`;
+        });
+        html += "</ul>";
+
+        container.innerHTML = html;
+      }
+
+      function renderPresentations(presentations) {
+        const container = document.getElementById("presentations");
+        if (!container) return;
+
+        if (presentations.length === 0) {
+          container.innerHTML = "<p>No presentations added yet.</p>";
+          return;
+        }
+
+        let html = '<div class="presentation-grid">';
+        presentations.forEach((pres) => {
+          const detailsLink = pres.detailsLink
+            ? `<a href="${pres.detailsLink}" target="_blank" class="details-btn">View Details</a>`
+            : "";
+          html += `
+            <div class="presentation-card">
+              <h4>${pres.title}</h4>
+              <p class="presentation-meta">
+                <span class="p-type">${pres.type}</span> |
+                <span class="p-event">${pres.event}</span>
+              </p>
+              <p class="presentation-desc">${pres.description}</p>
+              ${detailsLink}
+            </div>`;
+        });
+        html += "</div>";
+
+        container.innerHTML = html;
+      }
+
+      function renderWebinars(webinars) {
+        const container = document.getElementById("webinars");
+        if (!container) return;
+
+        if (webinars.length === 0) {
+          container.innerHTML = "<p>No webinars added yet.</p>";
+          return;
+        }
+
+        let html = '<ul class="webinar-list">';
+        webinars.forEach((web) => {
+          const titleLink = web.link
+            ? `<a href="${web.link}" target="_blank">"${web.title}"</a>`
+            : `"${web.title}"`;
+          const hostInfo = web.host ? ` – Hosted by ${web.host}` : "";
+          html += `<li class="webinar-item">${titleLink}${hostInfo}</li>`;
+        });
+        html += "</ul>";
+
+        container.innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        // Get the URL parameter
+        const params = new URLSearchParams(window.location.search);
+        const sectionToShow = params.get("section");
+
+        // Define titles for each section
+        const titles = {
+          certifications: "Certifications & Specialized Training",
+          presentations: "Presentations & Academic Engagements",
+          webinars: "Webinars & Continuing Education",
+        };
+
+        const pageTitleElement = document.getElementById("page-title");
+
+        if (!sectionToShow || !titles[sectionToShow]) {
+          pageTitleElement.textContent = "Content Not Found";
+          pageTitleElement.style.color = "red";
+          return;
+        }
+
+        pageTitleElement.textContent = titles[sectionToShow];
+
+        // Create Sanity client
+        const sanityClient = createClient({
+          projectId: "18tiebeg",
+          dataset: "production",
+          useCdn: true,
+          apiVersion: "2024-06-19",
+        });
+
+        try {
+          // Fetch the appropriate data based on section
+          let data = [];
+          if (sectionToShow === "certifications") {
+            data = await fetchCertifications(sanityClient);
+            renderCertifications(data);
+          } else if (sectionToShow === "presentations") {
+            data = await fetchPresentations(sanityClient);
+            renderPresentations(data);
+          } else if (sectionToShow === "webinars") {
+            data = await fetchWebinars(sanityClient);
+            renderWebinars(data);
+          }
+
+          // Show the section
+          const targetElement = document.getElementById(sectionToShow);
+          if (targetElement) {
+            targetElement.style.display = "block";
+          }
+        } catch (error) {
+          console.error("Error loading content:", error);
+          pageTitleElement.textContent = "Error Loading Content";
+          pageTitleElement.style.color = "red";
+        }
+      });
+    </script>
+    
+    <!-- Theme Toggle Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            if (newTheme === 'dark') {
+              htmlElement.setAttribute('data-theme', 'dark');
+            } else {
+              htmlElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', newTheme);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

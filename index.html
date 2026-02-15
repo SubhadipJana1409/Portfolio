@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Subhadip Jana – MSc Biotechnology, showcasing research, projects, and skills in science and technology."
+    />
+    <meta
+      name="keywords"
+      content="Subhadip Jana, Biotechnology, Research, Antibiotic Resistance, CV, Projects"
+    />
+    <meta name="author" content="Subhadip Jana" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>Subhadip Jana Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        
+        <!-- Modern Icon-based Navigation -->
+        <div class="modern-nav-wrapper">
+          <div class="modern-nav-links">
+            <a href="#home" class="nav-item">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+            <a href="#about" class="nav-item">
+              <i class="fa-solid fa-user"></i>
+              <span>About</span>
+            </a>
+            <a href="#skills" class="nav-item">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </a>
+            <a href="#projects" class="nav-item">
+              <i class="fa-solid fa-flask"></i>
+              <span>Projects</span>
+            </a>
+            <a href="#publications" class="nav-item">
+              <i class="fa-solid fa-book"></i>
+              <span>Publications</span>
+            </a>
+            <a href="#experience" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+            <a href="#scholarship" class="nav-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Awards</span>
+            </a>
+            <a href="#volunteering" class="nav-item">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <span>Volunteering</span>
+            </a>
+            <a href="#professional development" class="nav-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Development</span>
+            </a>
+            <a href="#blogs" class="nav-item">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>Blogs</span>
+            </a>
+            <a href="#contact" class="nav-item nav-item-contact">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+      
+      <!-- Mobile Dropdown Menu -->
+      <div class="dropdown">
+        <div class="links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="#scholarship">Scholarship & Awards</a>
+          <a href="#volunteering">Volunteering</a>
+          <a href="#professional development">Professional Development</a>
+          <a href="#blogs">Blogs</a>
+          <a href="#contact">Get In Touch</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Start of the Hero Section -->
+    <section id="home">
+      <div class="main-container">
+        <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+          <img
+            src="assets/images/Untitled design.png"
+            alt="Subhadip Jana profile picture"
+          />
+        </div>
+        <div class="content">
+          <h1
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="800"
+          >
+            Hey I'm <span>Subhadip</span>
+          </h1>
+          <div
+            class="typewriter"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="900"
+          >
+            I'm a <span id="typed-output"></span>
+          </div>
+          <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+            My research interest lies in exploring the human gut microbiome
+            using metagenomics and bioinformatics approaches. I am particularly
+            interested in understanding microbial diversity, functional gene
+            prediction, and the mechanisms of antibiotic resistance within gut
+            microbial communities. Ultimately, I aim to link microbial functions
+            with human health and disease outcomes.
+          </p>
+
+          <div
+            class="social-links"
+            data-aos="flip-down"
+            data-aos-duration="1000"
+            data-aos-delay="1200"
+          >
+            <a
+              href="https://github.com/SubhadipJana1409"
+              target="_blank"
+              aria-label="GitHub"
+              class="github-icon"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/SubhadipJana1409"
+              target="_blank"
+              aria-label="Facebook"
+              class="facebook-icon"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/subhadip-jana1409"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="linkedin-icon"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              href="https://orcid.org/0009-0003-7860-2853"
+              target="_blank"
+              aria-label="ORCID"
+              class="orcid-icon"
+              ><i class="fa-brands fa-orcid"></i
+            ></a>
+            <a
+              href="https://x.com/Subhadip1409"
+              target="_blank"
+              aria-label="Twitter"
+              class="x-icon"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+
+          <div
+            class="btn-container"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="900"
+          >
+            <a href="assets/pdf/Subhadip_Jana_CV (1).pdf" download>
+              <button class="hero-btn primary-btn">
+                <i class="fa-solid fa-download"></i> Download CV
+              </button>
+            </a>
+
+            <a href="assets/pdf/Subhadip_Jana_CV (1).pdf" target="_blank">
+              <button class="hero-btn secondary-btn">
+                <i class="fa-solid fa-eye"></i> View CV
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Timeline Section -->
+    <section id="about" class="page-section">
+      <div class="timeline-container">
+        <h2 class="section-title">A Little Bit About Me</h2>
+        <p class="section-subtitle">
+          <br />
+          <strong>Want to know more about me? Follow this timeline 👇</strong>
+        </p>
+
+        <!-- Filter Buttons -->
+        <div class="timeline-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="research">
+            Research & Projects
+          </button>
+          <button class="filter-btn" data-filter="academic">Academic</button>
+          <button class="filter-btn" data-filter="professional">
+            Professional
+          </button>
+          <button class="filter-btn" data-filter="award">Awards</button>
+        </div>
+
+        <!-- The Timeline -->
+        <div class="timeline">
+          <!-- Content will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="page-section">
+      <div class="skills-container">
+        <h2 class="section-title">Skills & Expertise</h2>
+
+        <!-- This new wrapper creates the two columns -->
+        <div class="skills-split-view">
+          <!-- Column 1: Filters and Skill Cloud -->
+          <div class="skills-left-panel">
+            <div class="skill-filters">
+              <button class="skill-filter-btn active" data-filter="all">
+                All
+              </button>
+              <button class="skill-filter-btn" data-filter="bioinformatics">
+                Bioinformatics
+              </button>
+              <button class="skill-filter-btn" data-filter="lab">
+                Lab Techniques
+              </button>
+              <button class="skill-filter-btn" data-filter="professional">
+                Professional
+              </button>
+            </div>
+            <div class="skill-cloud">
+              <!-- Skills will be loaded dynamically -->
+            </div>
+          </div>
+          <div
+            class="skills-right-panel"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            <div id="skill-info-box">
+              <i class="fa-solid fa-arrow-pointer"></i>
+              <h3>Click a skill to see details</h3>
+              <p>
+                Select any skill from the cloud on the left to read a summary of
+                my experience with it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="page-section">
+      <div class="projects-container">
+        <h2 class="section-title">Featured Research Projects</h2>
+        <p class="section-subtitle">
+          A selection of my key projects. Click the button below to view the
+          full, detailed archive.
+        </p>
+
+        <div class="project-grid">
+          <!-- Featured Project 1 -->
+          <a
+            href="projects.html"
+            class="project-preview-card"
+            data-aos="fade-up"
+          >
+            <img
+              src="assets/images/IMG_20240516_164651.jpg"
+              alt="Water sampling at the Mahananda River"
+            />
+            <div class="preview-card-content">
+              <h4>AMR in the Mahananda River</h4>
+              <div class="card-tags"><span>Metagenomics</span></div>
+            </div>
+          </a>
+
+          <!-- Featured Project 2 -->
+          <a
+            href="projects.html"
+            class="project-preview-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="assets/images/acacia-nilotica.jpg"
+              alt="Acacia nilotica plant"
+            />
+            <div class="preview-card-content">
+              <h4>Anthelmintic Activity of Acacia nilotica</h4>
+              <div class="card-tags"><span>Phytochemistry</span></div>
+            </div>
+          </a>
+
+          <!-- Featured Project 3 -->
+          <a
+            href="projects.html"
+            class="project-preview-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="assets/images/soil-microbe.jpg"
+              alt="Soil bacteria petri dish"
+            />
+            <div class="preview-card-content">
+              <h4>Screening Soil Isolates for Antibiotics</h4>
+              <div class="card-tags"><span>Bioprospecting</span></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- This is the button that links to your new projects page -->
+        <div style="text-align: center; margin-top: 50px">
+          <a href="projects.html" class="hero-btn primary-btn">
+            <i class="fa-solid fa-flask"></i> View All Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="page-section">
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
+        <p>
+          List your publications with full citations and links to
+          journals/preprints.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="page-section">
+      <div class="experience-container">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <!-- Filter Buttons -->
+        <div class="experience-filters">
+          <button class="exp-filter-btn active" data-filter="all">All</button>
+          <button class="exp-filter-btn" data-filter="research">
+            Research Experience
+          </button>
+          <button class="exp-filter-btn" data-filter="internship">
+            Internships
+          </button>
+          <button class="exp-filter-btn" data-filter="professional">
+            Professional & Academic Support
+          </button>
+        </div>
+
+        <!-- The Experience List -->
+        <div class="experience-list">
+          <!-- Experiences will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Scholarships & Awards Section -->
+    <section id="scholarship" class="page-section">
+      <div class="awards-container">
+        <h2 class="section-title">Scholarships & Awards</h2>
+
+        <!-- Main Featured Award -->
+        <div class="featured-award" data-aos="fade-down">
+          <!-- Will be loaded dynamically -->
+        </div>
+
+        <!-- Tier 2 Awards -->
+        <div class="secondary-awards-grid">
+          <!-- Will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="page-section">
+      <div class="volunteering-container">
+        <h2 class="section-title">Volunteering & Community Engagement</h2>
+
+        <div class="volunteering-grid">
+          <!-- Volunteering cards will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Development Section -->
+    <section id="professional development" class="page-section">
+      <div class="portal-container">
+        <h2 class="section-title">Professional Development</h2>
+        <p class="section-subtitle" style="margin-bottom: 50px">
+          A summary of my ongoing training, presentations, and continuing
+          education. Click to view the detailed records.
+        </p>
+
+        <div class="portal-grid">
+          <!-- The href now uses ?section=certifications -->
+          <a
+            href="development.html?section=certifications"
+            class="portal-card"
+            data-aos="fade-up"
+          >
+            <i class="fa-solid fa-certificate portal-icon"></i>
+            <h3>Certifications & Training</h3>
+            <p>
+              Formal, structured courses and workshops in bioinformatics and
+              data science.
+            </p>
+          </a>
+
+          <!-- The href now uses ?section=presentations -->
+          <a
+            href="development.html?section=presentations"
+            class="portal-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i class="fa-solid fa-person-chalkboard portal-icon"></i>
+            <h3>Presentations & Engagements</h3>
+            <p>
+              Poster and oral presentations at academic conferences and
+              symposiums.
+            </p>
+          </a>
+
+          <!-- The href now uses ?section=webinars -->
+          <a
+            href="development.html?section=webinars"
+            class="portal-card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i class="fa-solid fa-satellite-dish portal-icon"></i>
+            <h3>Webinars & Continuing Education</h3>
+            <p>
+              A list of attended webinars to stay current with the latest
+              research trends.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="page-section">
+      <div class="blog-container">
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="blog-subtitle">
+          A preview of my most recent writings. Click "View All Articles" for
+          the complete archive with search and filtering.
+        </p>
+
+        <!-- The grid will be populated by JavaScript with the 6 latest posts -->
+        <div class="blog-grid" id="latest-posts-grid">
+          <p class="loading-message">
+            <i class="fa-solid fa-spinner fa-spin"></i> Loading latest
+            articles...
+          </p>
+        </div>
+
+        <div class="blog-footer-actions">
+          <a href="blog.html" class="collab-cta-btn" data-aos="fade-up">
+            View All Articles »
+          </a>
+
+          <div
+            class="blog-cta-container"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <p>
+              Interested in collaborating or contributing a guest post? Let's
+              connect!
+            </p>
+            <button
+              class="collab-cta-btn"
+              data-modal-target="#blog-collab-modal"
+            >
+              Submit an Article Idea
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+      <div class="contact-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-subtitle">
+          I am actively seeking PhD opportunities and am open to collaborations.
+          Please feel free to reach out.
+        </p>
+
+        <div class="contact-content-wrapper">
+          <!-- Left Side: Contact Form -->
+          <div class="contact-form" data-aos="fade-right">
+            <!-- Give the form an ID so JavaScript can find it -->
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/mdkzzvel"
+              method="POST"
+            >
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="send-btn">Send Message</button>
+            </form>
+
+            <!-- Add this new div. This is where our success/error message will appear. -->
+            <div id="form-status"></div>
+          </div>
+
+          <!-- Right Side: Contact Info -->
+          <div class="contact-info" data-aos="fade-left" data-aos-delay="200">
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>subhadipjana1409@gmail.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-brands fa-linkedin"></i>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/subhadip-jana1409</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Purba Medinipur, West Bengal, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Collaboration Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <div class="modal" id="blog-collab-modal">
+      <div class="modal-header">
+        <h3>Submit a Guest Post Idea</h3>
+        <button class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          I welcome collaborations with fellow students, researchers, and
+          writers. If you have an idea for an article related to biotechnology,
+          molecular biology, science communication, or bioinformatics, please
+          pitch it below.
+        </p>
+
+        <!-- The Collaboration Form -->
+        <form
+          id="collab-form"
+          action="https://formspree.io/f/mpwrlykn"
+          method="POST"
+        >
+          <div class="form-group-vertical">
+            <label for="collab-name">Your Name</label>
+            <input type="text" id="collab-name" name="name" required />
+          </div>
+          <div class="form-group-vertical">
+            <label for="collab-email">Your Email</label>
+            <input type="email" id="collab-email" name="email" required />
+          </div>
+          <div class="form-group-vertical">
+            <label for="collab-title">Proposed Article Title</label>
+            <input type="text" id="collab-title" name="title" />
+          </div>
+          <div class="form-group-vertical">
+            <label for="collab-pitch">Brief Pitch / Abstract</label>
+            <textarea
+              id="collab-pitch"
+              name="pitch"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group-vertical">
+            <label for="collab-link"
+              >Link to Draft (Optional - Google Docs, Dropbox, etc.)</label
+            >
+            <input
+              type="url"
+              id="collab-link"
+              name="draft_link"
+              placeholder="https://docs.google.com/document/d/..."
+            />
+          </div>
+          <button type="submit" class="send-btn">Submit Pitch</button>
+        </form>
+
+        <!-- Status message for the collaboration form -->
+        <div id="collab-form-status"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-socials">
+          <a
+            href="https://github.com/SubhadipJana1409"
+            target="_blank"
+            aria-label="GitHub"
+            class="github-icon"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://facebook.com/SubhadipJana1409"
+            target="_blank"
+            aria-label="Facebook"
+            class="facebook-icon"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/subhadip-jana1409"
+            target="_blank"
+            aria-label="LinkedIn"
+            class="linkedin-icon"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://orcid.org/0009-0003-7860-2853"
+            target="_blank"
+            aria-label="ORCID"
+            class="orcid-icon"
+            ><i class="fa-brands fa-orcid"></i
+          ></a>
+          <a
+            href="https://x.com/"
+            target="_blank"
+            aria-label="Twitter"
+            class="x-icon"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+        </div>
+
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#scholarship">Scholarship & Awards</a></li>
+            <li><a href="#volunteering">Volunteering</a></li>
+            <li>
+              <a href="#professional development">Professional Development</a>
+            </li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Copyright © 2025 by Subhadip Jana | All Rights Reserved.</p>
+        </div>
+        <div class="footer-icon-top">
+          <a href="#home">
+            <i class="fa-solid fa-angle-up"></i>
+            <p>Back to Top</p>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>
