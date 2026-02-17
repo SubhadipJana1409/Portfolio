@@ -8,8 +8,14 @@ export const project = defineType({
     defineField({
       name: 'title',
       type: 'string',
-      title: 'Project Title',
-      description: 'Title of the research project',
+      title: 'Card Title',
+      description: 'Short title for the project card (e.g., "AMR in the Mahananda River")',
+    }),
+    defineField({
+      name: 'fullTitle',
+      type: 'string',
+      title: 'Full Title',
+      description: 'Full title shown in the modal header (e.g., "Comprehensive Assessment of Antibiotic Resistance in the Mahananda River")',
     }),
     defineField({
       name: 'description',

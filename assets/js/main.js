@@ -4,7 +4,24 @@
       // --- PART 2: GLOBAL VARIABLES & INITIALIZATION ---
       let allBlogPosts = []; // Will store combined posts from all sources
       // Initialize Animate-On-Scroll library
-      AOS.init({ offset: 100, once: true, duration: 600 });
+      // When navigating back via hash anchor (e.g. from projects.html → index.html#projects),
+      // disable all AOS animations so the page renders instantly at the target section.
+      // We also strip the hash from the URL to prevent the browser's native scroll
+      // (which fires before dynamic content loads, causing a wrong scroll position).
+      const savedHash = window.location.hash;
+      const hasHashNav = savedHash.length > 1;
+      if (hasHashNav) {
+        // Strip hash immediately so browser doesn't try to scroll to it
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        // Force scroll to top to prevent any residual scroll from the hash
+        window.scrollTo(0, 0);
+      }
+      AOS.init({
+        offset: 100,
+        once: true,
+        duration: hasHashNav ? 0 : 600,
+        disable: hasHashNav,
+      });
 
       // --- PART 3: SETUP FUNCTIONS (for static page elements) ---
 
@@ -643,6 +660,23 @@
           setTimeout(() => {
             if (window.AOS) AOS.refresh();
           }, 100);
+
+          // If we arrived via hash navigation (back arrow), scroll to the target section
+          // now that all dynamic content is rendered and section heights are correct.
+          if (hasHashNav && savedHash.length > 1) {
+            const hashId = decodeURIComponent(savedHash.substring(1));
+            const target = document.getElementById(hashId);
+            if (target) {
+              // Restore hash for correct URL display, then scroll
+              history.replaceState(null, '', savedHash);
+              // Double-rAF ensures layout is fully recalculated after content render
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  target.scrollIntoView({ behavior: 'instant' });
+                });
+              });
+            }
+          }
         } catch (error) {
           console.error("Error loading portfolio content:", error);
           // Gracefully handle errors - content will stay with hardcoded fallback

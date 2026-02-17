@@ -34,21 +34,95 @@
     </style>
   </head>
   <body>
-    <nav class="post-nav">
-      <a href="index.html#professional development" class="nav-back-link">
-        <i class="fa-solid fa-arrow-left"></i>
-        Back to Main Portfolio
-      </a>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fa-solid fa-sun"></i>
-        <i class="fa-solid fa-moon"></i>
-      </button>
+    <!-- Main Navigation Bar -->
+    <nav>
+      <div class="nav-container">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        
+        <!-- Modern Icon-based Navigation -->
+        <div class="modern-nav-wrapper">
+          <div class="modern-nav-links">
+            <a href="index.html" class="nav-item">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+            <a href="index.html#about" class="nav-item">
+              <i class="fa-solid fa-user"></i>
+              <span>About</span>
+            </a>
+            <a href="index.html#skills" class="nav-item">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </a>
+            <a href="projects.html" class="nav-item">
+              <i class="fa-solid fa-flask"></i>
+              <span>Projects</span>
+            </a>
+            <a href="index.html#publications" class="nav-item">
+              <i class="fa-solid fa-book"></i>
+              <span>Publications</span>
+            </a>
+            <a href="index.html#experience" class="nav-item">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+            <a href="index.html#scholarship" class="nav-item">
+              <i class="fa-solid fa-award"></i>
+              <span>Awards</span>
+            </a>
+            <a href="index.html#volunteering" class="nav-item">
+              <i class="fa-solid fa-handshake-angle"></i>
+              <span>Volunteering</span>
+            </a>
+            <a href="index.html#professional development" class="nav-item active">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Development</span>
+            </a>
+            <a href="blog.html" class="nav-item">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>Blogs</span>
+            </a>
+            <a href="index.html#contact" class="nav-item nav-item-contact">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+      
+      <!-- Mobile Dropdown Menu -->
+      <div class="dropdown">
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#publications">Publications</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#scholarship">Scholarship & Awards</a>
+          <a href="index.html#volunteering">Volunteering</a>
+          <a href="index.html#professional development">Professional Development</a>
+          <a href="blog.html">Blogs</a>
+          <a href="index.html#contact">Get In Touch</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
     </nav>
 
     <main class="page-section">
       <div class="development-container">
-        <!-- This h2 will be dynamically updated by JavaScript -->
-        <h2 id="page-title" class="section-title">Loading...</h2>
+        <div class="page-title-header">
+          <a href="index.html#professional%20development" class="back-arrow-btn" aria-label="Back to Professional Development" title="Back to Professional Development">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <h2 id="page-title" class="section-title">Loading...</h2>
+        </div>
 
         <!-- Content Section 1: Certifications -->
         <div id="certifications" class="content-section">
@@ -66,6 +140,45 @@
         </div>
       </div>
     </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-socials">
+          <a href="https://github.com/SubhadipJana1409" target="_blank" aria-label="GitHub" class="github-icon"><i class="fa-brands fa-github"></i></a>
+          <a href="https://facebook.com/SubhadipJana1409" target="_blank" aria-label="Facebook" class="facebook-icon"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://linkedin.com/in/subhadip-jana1409" target="_blank" aria-label="LinkedIn" class="linkedin-icon"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://orcid.org/0009-0003-7860-2853" target="_blank" aria-label="ORCID" class="orcid-icon"><i class="fa-brands fa-orcid"></i></a>
+          <a href="https://x.com/Subhadip1409" target="_blank" aria-label="Twitter" class="x-icon"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+
+        <div class="footer-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#publications">Publications</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#scholarship">Scholarship & Awards</a></li>
+            <li><a href="index.html#volunteering">Volunteering</a></li>
+            <li><a href="index.html#professional development">Professional Development</a></li>
+            <li><a href="index.html#blogs">Blogs</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Copyright © 2025 by Subhadip Jana | All Rights Reserved.</p>
+        </div>
+        <div class="footer-icon-top">
+          <a href="#">
+            <i class="fa-solid fa-angle-up"></i>
+            <p>Back to Top</p>
+          </a>
+        </div>
+      </div>
+    </footer>
 
     <!-- Dynamic Professional Development Content -->
     <script type="module">
@@ -199,14 +312,6 @@
 
         const pageTitleElement = document.getElementById("page-title");
 
-        if (!sectionToShow || !titles[sectionToShow]) {
-          pageTitleElement.textContent = "Content Not Found";
-          pageTitleElement.style.color = "red";
-          return;
-        }
-
-        pageTitleElement.textContent = titles[sectionToShow];
-
         // Create Sanity client
         const sanityClient = createClient({
           projectId: "18tiebeg",
@@ -216,23 +321,57 @@
         });
 
         try {
-          // Fetch the appropriate data based on section
-          let data = [];
-          if (sectionToShow === "certifications") {
-            data = await fetchCertifications(sanityClient);
-            renderCertifications(data);
-          } else if (sectionToShow === "presentations") {
-            data = await fetchPresentations(sanityClient);
-            renderPresentations(data);
-          } else if (sectionToShow === "webinars") {
-            data = await fetchWebinars(sanityClient);
-            renderWebinars(data);
-          }
+          if (sectionToShow && titles[sectionToShow]) {
+            // Show a specific section
+            pageTitleElement.textContent = titles[sectionToShow];
 
-          // Show the section
-          const targetElement = document.getElementById(sectionToShow);
-          if (targetElement) {
-            targetElement.style.display = "block";
+            let data = [];
+            if (sectionToShow === "certifications") {
+              data = await fetchCertifications(sanityClient);
+              renderCertifications(data);
+            } else if (sectionToShow === "presentations") {
+              data = await fetchPresentations(sanityClient);
+              renderPresentations(data);
+            } else if (sectionToShow === "webinars") {
+              data = await fetchWebinars(sanityClient);
+              renderWebinars(data);
+            }
+
+            // Show the section
+            const targetElement = document.getElementById(sectionToShow);
+            if (targetElement) {
+              targetElement.style.display = "block";
+            }
+          } else {
+            // No section param or invalid — show ALL sections
+            pageTitleElement.textContent = "Professional Development";
+
+            const [certs, pres, webs] = await Promise.all([
+              fetchCertifications(sanityClient),
+              fetchPresentations(sanityClient),
+              fetchWebinars(sanityClient),
+            ]);
+
+            // Add sub-headings and render each section
+            const certContainer = document.getElementById("certifications");
+            const presContainer = document.getElementById("presentations");
+            const webContainer = document.getElementById("webinars");
+
+            if (certContainer) {
+              renderCertifications(certs);
+              certContainer.insertAdjacentHTML("afterbegin", `<h3 class="subsection-title">${titles.certifications}</h3>`);
+              certContainer.style.display = "block";
+            }
+            if (presContainer) {
+              renderPresentations(pres);
+              presContainer.insertAdjacentHTML("afterbegin", `<h3 class="subsection-title">${titles.presentations}</h3>`);
+              presContainer.style.display = "block";
+            }
+            if (webContainer) {
+              renderWebinars(webs);
+              webContainer.insertAdjacentHTML("afterbegin", `<h3 class="subsection-title">${titles.webinars}</h3>`);
+              webContainer.style.display = "block";
+            }
           }
         } catch (error) {
           console.error("Error loading content:", error);
@@ -242,8 +381,16 @@
       });
     </script>
     
-    <!-- Theme Toggle Script -->
+    <!-- Theme Toggle & Mobile Menu Script -->
     <script>
+      // Mobile Menu toggle
+      window.hamburg = () => {
+        document.querySelector(".dropdown").style.transform = "translateY(0)";
+      };
+      window.cancel = () => {
+        document.querySelector(".dropdown").style.transform = "translateY(-110%)";
+      };
+
       document.addEventListener('DOMContentLoaded', function() {
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;

@@ -518,6 +518,49 @@ section#home {
   margin-bottom: 40px;
 }
 
+/* Back-arrow for sub-pages */
+.page-title-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.page-title-header .section-title {
+  margin-bottom: 0;
+}
+
+.back-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(109, 67, 0, 0.1);
+  color: rgb(109, 67, 0);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.back-arrow-btn:hover {
+  background: rgb(109, 67, 0);
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+[data-theme="dark"] .back-arrow-btn {
+  background: rgba(255, 193, 68, 0.15);
+  color: #ffc144;
+}
+
+[data-theme="dark"] .back-arrow-btn:hover {
+  background: #ffc144;
+  color: #1a1a2e;
+}
+
 .about-content p {
   font-size: 1.1rem;
   line-height: 1.8;
