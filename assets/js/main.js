@@ -155,7 +155,6 @@
             if (window.AOS) AOS.refresh();
           });
         };
-        setupFilter(".timeline-container", ".filter-btn", ".timeline-item");
         setupFilter(".skills-left-panel", ".skill-filter-btn", ".skill-bubble");
         setupFilter(
           ".experience-container",
@@ -194,15 +193,49 @@
 
       // --- PART 5: PORTFOLIO CONTENT FUNCTIONS ---
 
-      // Fetches timeline milestones
-      async function fetchMilestones(client) {
-        try {
-          const query = `*[_type == "milestone"] | order(order desc){ _id, title, description, date, category, icon, order }`;
-          return await client.fetch(query);
-        } catch (error) {
-          console.error("Milestones fetch failed:", error);
-          return [];
-        }
+      // Renders About section stat cards dynamically — only shows cards with count >= 1
+      function renderAboutStats({ projects, experiences, scholarships, publications, presentations, webinars }) {
+        const container = document.getElementById('about-stats');
+        if (!container) return;
+
+        const statConfig = [
+          { data: projects, icon: 'fa-solid fa-flask-vial', label: 'Research Projects', href: '#projects', suffix: '+' },
+          { data: experiences.filter(e => e.category === 'internship'), icon: 'fa-solid fa-briefcase', label: 'Internships', href: '#experience', suffix: '+' },
+          { data: scholarships, icon: 'fa-solid fa-trophy', label: 'Scholarships & Awards', href: '#scholarship', suffix: '' },
+          { data: publications, icon: 'fa-solid fa-book-open', label: 'Publications', href: '#publications', suffix: '' },
+          { data: presentations, icon: 'fa-solid fa-chalkboard-user', label: 'Presentations', href: '#presentations', suffix: '' },
+          { data: webinars, icon: 'fa-solid fa-video', label: 'Webinars', href: '#webinars', suffix: '' },
+        ];
+
+        const visible = statConfig.filter(s => s.data.length > 0);
+        container.innerHTML = '';
+
+        visible.forEach((stat, i) => {
+          const card = document.createElement('a');
+          card.href = stat.href;
+          card.className = 'stat-card';
+          card.setAttribute('data-aos', 'fade-up');
+          card.setAttribute('data-aos-delay', String(i * 100));
+          card.innerHTML = `
+            <div class="stat-icon"><i class="${stat.icon}"></i></div>
+            <span class="stat-number">0</span>
+            <span class="stat-label">${stat.label}</span>
+          `;
+          container.appendChild(card);
+
+          // Count-up animation
+          const numEl = card.querySelector('.stat-number');
+          const value = stat.data.length;
+          const suffix = stat.suffix;
+          const duration = 1200;
+          const start = performance.now();
+          const animate = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            numEl.textContent = Math.floor(progress * value) + suffix;
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        });
       }
 
       // Fetches skills
@@ -305,27 +338,6 @@
       }
 
       // Rendering functions
-      function renderMilestones(milestones) {
-        const container = document.querySelector(".timeline");
-        if (!container) return;
-        container.innerHTML = "";
-        milestones.forEach((milestone, index) => {
-          const html = `
-            <div class="timeline-item" data-category="${milestone.category}" data-aos="fade-up">
-              <div class="timeline-icon">
-                <i class="${milestone.icon}"></i>
-              </div>
-              <div class="timeline-content">
-                <span class="timeline-date">${milestone.date}</span>
-                <h4>${milestone.title}</h4>
-                <p>${milestone.description}</p>
-              </div>
-            </div>
-          `;
-          container.insertAdjacentHTML("beforeend", html);
-        });
-      }
-
       function renderSkills(skills) {
         const container = document.querySelector(".skill-cloud");
         if (!container) return;
@@ -619,29 +631,31 @@
         try {
           // Fetch all content in parallel
           const [
-            milestones,
             skills,
             experiences,
             scholarships,
             volunteers,
             featuredProjects,
             publications,
+            presentations,
+            webinars,
             sanityPosts,
             mediumPosts,
           ] = await Promise.all([
-            fetchMilestones(sanityClient),
             fetchSkills(sanityClient),
             fetchExperiences(sanityClient),
             fetchScholarships(sanityClient),
             fetchVolunteers(sanityClient),
             fetchFeaturedProjects(sanityClient),
             fetchPublications(sanityClient),
+            fetchPresentations(sanityClient),
+            fetchWebinars(sanityClient),
             fetchSanityPosts(sanityClient),
             fetchMediumPosts(),
           ]);
 
           // Render all sections
-          renderMilestones(milestones);
+          renderAboutStats({ projects: featuredProjects, experiences, scholarships, publications, presentations, webinars });
           renderSkills(skills);
           renderExperiences(experiences);
           renderScholarships(scholarships);
