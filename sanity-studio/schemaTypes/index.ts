@@ -1,5 +1,4 @@
 import {post} from './post'
-import {milestone} from './milestone'
 import {skill} from './skill'
 import {experience} from './experience'
 import {scholarship} from './scholarship'
@@ -12,7 +11,6 @@ import {webinar} from './webinar'
 
 export const schemaTypes = [
   post,
-  milestone,
   skill,
   experience,
   scholarship,
