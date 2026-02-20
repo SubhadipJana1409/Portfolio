@@ -367,7 +367,7 @@
 
         if (settings.profileImageUrl) {
           const heroImg = document.getElementById('hero-profile-img');
-          if (heroImg) heroImg.src = optimizeSanityUrl(settings.profileImageUrl, 400);
+          if (heroImg) heroImg.src = optimizeSanityUrl(settings.profileImageUrl, 900);
         }
       }
 
@@ -484,7 +484,7 @@
             .map((tag) => `<span>${tag}</span>`)
             .join("");
           const imageUrl =
-            optimizeSanityUrl(project.imageUrl, 600) || "assets/images/project-placeholder.png";
+            optimizeSanityUrl(project.imageUrl, 760) || "assets/images/project-placeholder.png";
           const html = `
             <a href="projects.html" class="project-preview-card" data-aos="fade-up" data-aos-delay="${
               index * 100
@@ -558,7 +558,7 @@
         const postLink =
           post.source === "medium" ? post.link : `blog.html?slug=${post.slug}`;
         const imageUrl =
-          optimizeSanityUrl(post.imageUrl, 800) || "https://via.placeholder.com/800x600?text=Article";
+          optimizeSanityUrl(post.imageUrl, 760) || "https://via.placeholder.com/800x600?text=Article";
         const postDate = new Date(post.publishedAt).toLocaleDateString(
           "en-US",
           { year: "numeric", month: "long", day: "numeric" }

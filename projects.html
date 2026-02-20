@@ -320,7 +320,7 @@
         }
 
         projects.forEach((project, index) => {
-          const imageUrl = optimizeSanityUrl(project.imageUrl, 600) || "assets/images/project-placeholder.png";
+          const imageUrl = optimizeSanityUrl(project.imageUrl, 760) || "assets/images/project-placeholder.png";
           const tagsHtml = (project.tags || []).map(tag => `<span>${tag}</span>`).join("");
           const shortDesc = project.description || "Click to view details.";
 
@@ -357,7 +357,7 @@
         function openModal(project) {
           // Use fullTitle for modal header, fallback to title
           modalTitle.textContent = project.fullTitle || project.title;
-          modalImage.src = optimizeSanityUrl(project.imageUrl, 1200) || "assets/images/project-placeholder.png";
+          modalImage.src = optimizeSanityUrl(project.imageUrl, 800) || "assets/images/project-placeholder.png";
           modalImage.alt = project.title;
           modalTags.innerHTML = (project.tags || []).map(tag => `<span>${tag}</span>`).join("");
           modalContent.innerHTML = blocksToHtml(project.detailedDescription);

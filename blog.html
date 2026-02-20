@@ -324,7 +324,7 @@
         const postLink =
           post.source === "medium" ? post.link : `post.html?slug=${post.slug}`;
         const imageUrl =
-          optimizeSanityUrl(post.imageUrl, 600) || "https://via.placeholder.com/400x250?text=Article";
+          optimizeSanityUrl(post.imageUrl, 760) || "https://via.placeholder.com/400x250?text=Article";
         const postDate = new Date(post.publishedAt).toLocaleDateString(
           "en-US",
           { day: "numeric", month: "short", year: "numeric" }
