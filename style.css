@@ -2630,15 +2630,14 @@ footer {
   transition: border-color 0.3s ease;
 }
 
-/* Remove borders from cards that already have them to reset */
+/* Ensure all cards start with a transparent border to prevent layout shift on hover */
 .project-card,
 .project-preview-card,
-.experience-item,
 .featured-award,
 .secondary-award,
 .volunteer-card {
-  border: none;
-  transition: border-color 0.3s ease, border-width 0.3s ease;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .experience-item {
@@ -2674,8 +2673,6 @@ footer {
 .blog-card:hover,
 .modal:hover {
   border-color: rgb(109, 67, 0);
-  border-style: solid !important;
-  border-width: 1px !important;
 }
 
 .experience-item:hover {
