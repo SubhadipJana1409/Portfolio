@@ -287,6 +287,12 @@
       // ============================================================
       // Fetch ALL projects from Sanity
       // ============================================================
+      // Optimizes a Sanity CDN image URL with width and auto-format params
+      function optimizeSanityUrl(url, width) {
+        if (!url || !url.includes('cdn.sanity.io')) return url;
+        return `${url}?w=${width}&auto=format`;
+      }
+
       async function fetchAllProjects(client) {
         try {
           const query = `*[_type == "project"] | order(order desc){
@@ -314,7 +320,7 @@
         }
 
         projects.forEach((project, index) => {
-          const imageUrl = project.imageUrl || "assets/images/project-placeholder.png";
+          const imageUrl = optimizeSanityUrl(project.imageUrl, 600) || "assets/images/project-placeholder.png";
           const tagsHtml = (project.tags || []).map(tag => `<span>${tag}</span>`).join("");
           const shortDesc = project.description || "Click to view details.";
 
@@ -351,7 +357,7 @@
         function openModal(project) {
           // Use fullTitle for modal header, fallback to title
           modalTitle.textContent = project.fullTitle || project.title;
-          modalImage.src = project.imageUrl || "assets/images/project-placeholder.png";
+          modalImage.src = optimizeSanityUrl(project.imageUrl, 1200) || "assets/images/project-placeholder.png";
           modalImage.alt = project.title;
           modalTags.innerHTML = (project.tags || []).map(tag => `<span>${tag}</span>`).join("");
           modalContent.innerHTML = blocksToHtml(project.detailedDescription);

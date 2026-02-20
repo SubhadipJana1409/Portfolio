@@ -245,6 +245,12 @@
       // --- PART 3: HELPER FUNCTIONS ---
 
       // === In blog.html script ===
+      // Optimizes a Sanity CDN image URL with width and auto-format params
+      function optimizeSanityUrl(url, width) {
+        if (!url || !url.includes('cdn.sanity.io')) return url;
+        return `${url}?w=${width}&auto=format`;
+      }
+
       async function fetchSanityPosts(client) {
         // The query now asks for 'tags' instead of 'categories'
         const query = `*[_type == "post"]{_id, title, "slug": slug.current, "imageUrl": mainImage.asset->url, tags, publishedAt, "excerpt": pt::text(body)}`;
@@ -318,7 +324,7 @@
         const postLink =
           post.source === "medium" ? post.link : `post.html?slug=${post.slug}`;
         const imageUrl =
-          post.imageUrl || "https://via.placeholder.com/400x250?text=Article";
+          optimizeSanityUrl(post.imageUrl, 600) || "https://via.placeholder.com/400x250?text=Article";
         const postDate = new Date(post.publishedAt).toLocaleDateString(
           "en-US",
           { day: "numeric", month: "short", year: "numeric" }
