@@ -337,6 +337,34 @@
         }
       }
 
+      // Fetches site settings (CV file URL and profile image URL)
+      async function fetchSiteSettings(client) {
+        try {
+          const query = `*[_type == "siteSettings"][0]{ "cvUrl": cvFile.asset->url, "profileImageUrl": profileImage.asset->url }`;
+          return await client.fetch(query);
+        } catch (error) {
+          console.error("Site settings fetch failed:", error);
+          return null;
+        }
+      }
+
+      // Applies site settings (CV + profile image) to the DOM
+      function applySiteSettings(settings) {
+        if (!settings) return;
+
+        if (settings.cvUrl) {
+          const cvDownload = document.getElementById('cv-download');
+          const cvView = document.getElementById('cv-view');
+          if (cvDownload) cvDownload.href = settings.cvUrl;
+          if (cvView) cvView.href = settings.cvUrl;
+        }
+
+        if (settings.profileImageUrl) {
+          const heroImg = document.getElementById('hero-profile-img');
+          if (heroImg) heroImg.src = settings.profileImageUrl;
+        }
+      }
+
       // Rendering functions
       function renderSkills(skills) {
         const container = document.querySelector(".skill-cloud");
@@ -641,6 +669,7 @@
             webinars,
             sanityPosts,
             mediumPosts,
+            siteSettings,
           ] = await Promise.all([
             fetchSkills(sanityClient),
             fetchExperiences(sanityClient),
@@ -652,6 +681,7 @@
             fetchWebinars(sanityClient),
             fetchSanityPosts(sanityClient),
             fetchMediumPosts(),
+            fetchSiteSettings(sanityClient),
           ]);
 
           // Render all sections
@@ -662,6 +692,7 @@
           renderVolunteers(volunteers);
           renderFeaturedProjects(featuredProjects);
           renderPublications(publications);
+          applySiteSettings(siteSettings);
 
           // Render blog cards
           allBlogPosts = [...sanityPosts, ...mediumPosts].sort(

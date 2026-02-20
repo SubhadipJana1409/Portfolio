@@ -8,6 +8,7 @@ import {publication} from './publication'
 import {certification} from './certification'
 import {presentation} from './presentation'
 import {webinar} from './webinar'
+import {siteSettings} from './siteSettings'
 
 export const schemaTypes = [
   post,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   certification,
   presentation,
   webinar,
+  siteSettings,
 ]
